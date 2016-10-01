@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Tạo Mới Blog</title>
-	<link rel="shortcut icon"
-     href="images/logo.png" />
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<style type="text/css">
+		
+	</style>
+
+  </head>
+  <body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+	<h1 style="text-align: center;">Tạo Mới 1 Blog!</h1>
 	
-</body>
+	<!-- tiêu đề blog -->
+	<div class="form-group">
+	  <label for="usr" style="font-size: 20px;margin-top: 100px;margin-left: 300px;">Tiêu Đề Blog!</label>
+	  <input type="text" class="form-control" id="usr" style="width: 800px; margin-left: 300px;">
+	</div>
+	<!-- kết thúc tiêu đề blog -->
+
+	<!-- nội dung blog -->
+	<div class="form-group" style="font-size: 20px;">
+	  <label for="comment" style="margin-left: 300px;margin-top: 50px;">Nội Dung Blog</label>
+	  <textarea class="form-control" rows="5" id="comment" style="margin-left: 300px;width: 800px;height: 500px;"></textarea>
+	</div>
+	<!-- kết thúc nội dung blog -->
+
+	<!-- button tạo chủ đề -->
+	<div id="taoxoa">
+		<ul class="nav nav-pills" style="margin-left: 300px;">
+ 			<li class="active"><a href="taomoi.html" style="font-size: 15px;">Tạo</a></li>
+			<li class="active"><a href="danhsachtao.html" style="font-size: 15px; margin-left: 10px;">Hủy</a></li>
+		</ul>
+		<hr>
+	</div>
+	<!-- kết thúc button tạo chủ đề -->
+
+  </body>
 </html>
