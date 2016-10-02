@@ -30,10 +30,9 @@
 	<h1 style="text-align: center;margin-top: 100px;">Danh Sách Các Blog Đã Tạo</h1>
 	
 	<div class="list-group">
-	  <a href="thuongmaidientu.html" class="list-group-item">Thương Mại Điện Tử</a>
-	  <a href="kiemchungphanmem.html" class="list-group-item">kiểm Chứng Phần Mềm</a>
-	  <a href="quanlyduanphanmem.html" class="list-group-item">Quản Lý Dự Án Phần Mềm</a>
-	  <a href="xmlvaungdung.html" class="list-group-item">Công Nghệ XML Và Ứng Dụng</a>
+  <%= @getList.each do |i| %>
+    <a href = "/blog/<%= i.id %>"  class="list-group-item"><%= i.title %></a>
+  <% end %>
 	</div>
 
   </body>
