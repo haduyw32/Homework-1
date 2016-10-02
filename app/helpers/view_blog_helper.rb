@@ -1,0 +1,2 @@
+module ViewBlogHelper
+end
