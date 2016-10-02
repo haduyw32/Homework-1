@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/list', to: 'index#toList'
   get '/new', to: 'index#newBlog'
   get '/blog/:id', to:'view_blog#demo'
+  post '/saveBlog', to: 'view_blog#save'
+  post '/edit', to: 'view_blog#edit'
 end

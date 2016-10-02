@@ -32,21 +32,21 @@
 	<!-- tiêu đề blog -->
 	<div class="form-group">
 	  <label for="usr" style="font-size: 20px;margin-top: 100px;margin-left: 300px;">Tiêu Đề Blog!</label>
-	  <input type="text" class="form-control" id="usr" style="width: 800px; margin-left: 300px;">
+	  <input type="text" class="form-control" id="usr" style="width: 800px; margin-left: 300px;" value = "<%= @title %>">
 	</div>
 	<!-- kết thúc tiêu đề blog -->
 
 	<!-- nội dung blog -->
 	<div class="form-group" style="font-size: 20px;">
 	  <label for="comment" style="margin-left: 300px;margin-top: 50px;">Nội Dung Blog</label>
-	  <textarea class="form-control" rows="5" id="comment" style="margin-left: 300px;width: 800px;height: 500px;"></textarea>
+	  <textarea class="form-control" rows="5" id="comment" style="margin-left: 300px;width: 800px;height: 500px;"><%= @conten %></textarea>
 	</div>
 	<!-- kết thúc nội dung blog -->
 
 	<!-- button tạo chủ đề -->
 	<div id="taoxoa">
 		<ul class="nav nav-pills" style="margin-left: 300px;">
- 			<li class="active"><a href="taomoi.html" style="font-size: 15px;">Tạo</a></li>
+ 			<button class="active" style="font-size: 15px;"><span>Tạo</span></button>
 			<li class="active"><a href="danhsachtao.html" style="font-size: 15px; margin-left: 10px;">Hủy</a></li>
 		</ul>
 		<hr>
@@ -56,10 +56,10 @@
 	$(".active").click(function () {
 		if ($(this).text() == "Tạo")
 		{
-			//var content = $(".")
-			//$.post("/saveReg", {reg: reg},  function() { //reg[{_id:{place:, stypeVacxin, user}, date}]
-					
-			//});
+			var c = $("#comment").val();
+			var t = $("input").val()
+			$.post("/saveBlog", {title: t, content: c},  function() {					
+			});
 		}
 	});
 </script>

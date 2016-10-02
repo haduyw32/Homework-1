@@ -1,3 +1,28 @@
-<%= @title %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<label id='title' for="usr" style="font-size: 20px;margin-top: 100px;margin-left: 300px;"><%= @title %></label>
 <br>
-<%= @content %>
+<br>
+<textarea id='content' rows="5" style="margin-left: 300px;width: 800px;height: 500px;" readonly><%= @content %></textarea>
+
+<button type="submit">Edit</button>
+<script>
+    $('button').click(function () {
+       $('#content').removeAttr('readonly');
+       if ($('button').text() == 'Update') {
+        var t = $('#title').text();
+        var c = $('#content').val();
+        var temp = window.location.href;
+        for (var i=temp.length; i>0; i--) {
+            if (temp[i] == '/') {
+            temp = temp.substring(i+1, temp.length);
+            }
+        }
+        $.post("/edit", {id: temp, title: t, content: c},  function() {		
+	    });
+        }
+       $('button').text('Update');
+    });
+    
+    
+    
+</script>
