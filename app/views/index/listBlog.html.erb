@@ -30,7 +30,7 @@
 	<h1 style="text-align: center;margin-top: 100px;">Danh Sách Các Blog Đã Tạo</h1>
 	
 	<div class="list-group">
-  <%= @getList.each do |i| %>
+  <% @getList.each do |i| %>
     <a href = "/blog/<%= i.id %>"  class="list-group-item"><%= i.title %></a>
   <% end %>
 	</div>

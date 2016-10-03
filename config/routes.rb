@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get '/', to: 'index#index'
   get '/list', to: 'index#toList'
   get '/new', to: 'index#newBlog'
-  get '/blog/:id', to:'view_blog#demo'
+  get '/blog/:id', to:'view_blog#view'
   post '/saveBlog', to: 'view_blog#save'
   post '/edit', to: 'view_blog#edit'
+  post '/saveComment', to: 'view_blog#saveComment'
 end
