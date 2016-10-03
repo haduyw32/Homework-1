@@ -2,19 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     </head>
     <body>
         <label id='title' for="usr" style="font-size: 20px;margin-top: 100px;margin-left: 300px;"><%= @title %></label>
+        <br>
+        <span style="margin-left: 300px">Đã xem: <%= @seen %></span>
         <br>
         <br>
         <textarea id='content' rows="5" style="margin-left: 300px;width: 800px;height: 500px;" readonly><%= @content %></textarea>
 
         <button type="submit">Edit</button>
         <script>
-            $('button').click(function () {
+            $('button').eq(0).click(function () {
             $('#content').removeAttr('readonly');
-            if ($('button').text() == 'Update') {
+            if ($('button').eq(0).text() == 'Update') {
                 var t = $('#title').text();
                 var c = $('#content').val();
                 var temp = window.location.href;
@@ -50,10 +52,10 @@
                 }
                 $.post("/saveComment", {id: temp, name: n, comment: c},  function() {		
                 });
-                var strhtml = $('comment_view').html();
-                strhtml = strhtml + "<div style = border-bottom-style: double;> <span class=author><b class=author-name>" +
-                n + "</b> said:</span> <blockquote style=margin-left: 10px;>" + c + "</blockquote> </div>";
-                $('comment_view').html(strhtml);
+                var strhtml ;
+                strhtml = "<div style = border-bottom-style:double;> <span class=author><b class=author-name>" +
+                n + "</b> said:</span> <blockquote style=margin-left:10px;>" + c + "</blockquote> </div>";
+                $('#comment_view').append(strhtml);
             });
         </script>
         <div id="comment_view">
@@ -67,8 +69,8 @@
                     <% end %>                
                 <% else %>
                     <div style="border-bottom-style: double;">
-                    <span class="author"><b class="author-name"><%= @tempCm.name %></b> said:</span>
-                    <blockquote style="margin-left: 10px;"><%= @tempCm.comment %></blockquote>
+                    <span class="author"><b class="author-name"><%= @tempCm[0].name %></b> said:</span>
+                    <blockquote style="margin-left: 10px;"><%= @tempCm[0].comment %></blockquote>
                     </div>
                 <% end %>
             <% end %>
